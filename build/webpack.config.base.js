@@ -55,7 +55,7 @@ const config = {
   // import Vue from 'vue' 解析的路径位置
   resolve: {
     alias: {
-      "vue": path.join(__dirname, '../node_modules/vue/dist/vue.min.js')
+      vue: path.join(__dirname, '../node_modules/vue/dist/vue.min.js')
     }
   }
 }
