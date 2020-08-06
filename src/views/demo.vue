@@ -1,12 +1,23 @@
 <template>
   <div class="demo">
-    demo
+    <my-slot>
+      <div slot="a">
+        <!-- demo---aaaa -->
+        <p slot="b">
+          demo---pppp
+        </p>
+      </div>
+    </my-slot>
   </div>
 </template>
 
 <script>
+import MySlot from './demo-text.vue'
 export default {
-  name: 'Demo'
+  name: 'Demo',
+  components: {
+    MySlot
+  }
 }
 </script>
 

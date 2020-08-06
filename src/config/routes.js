@@ -1,7 +1,12 @@
 export default [
   {
     path: '/',
-    redirect: '/todo'
+    // redirect: '/todo'
+    redirect: '/component'
+  },
+  {
+    path: '/component',
+    component: () => import('../views/components/ele.vue')
   },
   {
     path: '/todo',
@@ -15,7 +20,12 @@ export default [
   },
   {
     path: '/demo',
-    name: 'Name',
+    name: 'demo',
     component: () => import('../views/demo.vue')
+  },
+  {
+    path: '/slot',
+    name: 'slot',
+    component: () => import('../views/slotDemo.vue')
   }
 ]
