@@ -9,11 +9,20 @@
     "lint": "eslint --ext .js --ext .vue src/",
     "lint-fix": "eslint --fix --ext .js --ext .vue src/",
     "build": "cross-env NODE_ENV=production npm run clean && webpack --config build/webpack.config.client.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "lint-staged": "lint-staged"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/.js": [
+      "eslint --ext .js --ext .vue",
+      "git add"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
