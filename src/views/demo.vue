@@ -16,7 +16,7 @@ import MySlot from './demo-text.vue'
 export default {
   name: 'Demo',
   components: {
-    MySlot
+    MySlot,
   }
 }
 </script>
