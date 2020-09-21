@@ -28,7 +28,7 @@ export default {
     return {
       val: {
         a: 123,
-        b: 321
+        b: 321,
       }
     }
   }
