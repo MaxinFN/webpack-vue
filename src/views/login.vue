@@ -23,7 +23,7 @@ export default {
   name: 'Login',
   components: {
     MyInput,
-    MySlot
+    MySlot,
   },
   data () {
     return {
