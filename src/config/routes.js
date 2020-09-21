@@ -2,7 +2,11 @@ export default [
   {
     path: '/',
     // redirect: '/todo'
-    redirect: '/component'
+    redirect: '/debounce'
+  },
+  {
+    path: '/debounce',
+    component: () => import('../views/debounce.vue')
   },
   {
     path: '/component',
