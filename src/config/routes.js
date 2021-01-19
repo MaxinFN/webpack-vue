@@ -31,5 +31,10 @@ export default [
     path: '/slot',
     name: 'slot',
     component: () => import('../views/slotDemo.vue')
+  },
+  {
+    path: '/zhuanpan',
+    name: 'zhuanpan',
+    component: () => import('../views/zhuanpan.vue')
   }
 ]

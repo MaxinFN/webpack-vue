@@ -6,6 +6,7 @@
     >
       {{ count ? count : '' }}
     </div>
+    123131312313
   </div>
 </template>
 <script>

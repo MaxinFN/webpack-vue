@@ -5,11 +5,19 @@ const merge = require('webpack-merge') // 合并webpack配置
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HTMLPlugin = require('html-webpack-plugin')
 const ExtractPlugin = require('extract-text-webpack-plugin')
+const FriendlyErrorsWebpackPlugin  = require('friendly-errors-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer') // webpack打包文件体积和依赖关系的可视化
 
 const baseConfig = require('./webpack.config.base')
 const isDev = process.env.NODE_ENV === 'development'
 
 const defaulePlugins = [
+  new FriendlyErrorsWebpackPlugin({
+    compilationSuccessInfo: {
+      messages: [`Your application is running here: ${isDev ? 'dev环境' : '生产环境'}`],
+    },
+    clearConsole: true
+  }),
   new VueLoaderPlugin(),
   new webpack.DefinePlugin({ // 给webpack 编译时以及页面上的来判断环境
     'process.env': {
@@ -30,7 +38,7 @@ const defaulePlugins = [
 
 const devServer = {
   port: 8090,
-  host: '0.0.0.0',
+  host: 'localhost',
   overlay: {
     errors: true // webpack配置错误显示到浏览器
   },
@@ -38,8 +46,9 @@ const devServer = {
   historyApiFallback: {
     index: '/index.html'
   },
-  hot: true
-  // open: true   // 自动打开浏览器
+  hot: true,
+  open: true,   // 自动打开浏览器
+  clientLogLevel: "none"
 }
 
 let config
@@ -67,9 +76,11 @@ if (isDev) {
     },
     devServer,
     plugins: defaulePlugins.concat([
+      new BundleAnalyzerPlugin({ analyzerPort: 8099 }),
       new webpack.HotModuleReplacementPlugin(), // 热更新插件
       new webpack.NoEmitOnErrorsPlugin()
-    ])
+    ]),
+    stats: 'errors-only' // 减少控制台输出的无用信息 （只在发生错误的时候进行输出）
   })
 
 } else {
