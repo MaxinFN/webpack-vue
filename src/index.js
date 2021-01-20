@@ -9,10 +9,16 @@ import createRouter from './config/router'
 import createStore from './store/index'
 import './assets/images/asfd.png'
 import './assets/styles/test.css'
-
+// 自定义指令
+import directive from './directive'
 Vue.use(ElementUI)
 Object.defineProperty(Vue.prototype, '$xss', {
   value: xss
+})
+
+// 自定义指令
+Object.keys(directive).forEach(name => {
+  Vue.directive(name, directive[name])
 })
 // const root = document.createElement('div')
 // document.body.appendChild(root)

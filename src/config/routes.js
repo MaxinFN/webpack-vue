@@ -36,5 +36,10 @@ export default [
     path: '/zhuanpan',
     name: 'zhuanpan',
     component: () => import('../views/zhuanpan.vue')
+  },
+  {
+    path: '/directives',
+    name: 'directive',
+    component: () => import('../views/demo/demo-directive.vue')
   }
 ]
