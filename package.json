@@ -46,6 +46,8 @@
     "babel-preset-env": "^1.7.0",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-loader": "^4.0.0",
@@ -76,5 +78,13 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz.config.js"
+    }
   }
 }

@@ -11,6 +11,8 @@ import './assets/images/asfd.png'
 import './assets/styles/test.css'
 // 自定义指令
 import directive from './directive'
+import Global from './global'
+Vue.use(Global)
 Vue.use(ElementUI)
 Object.defineProperty(Vue.prototype, '$xss', {
   value: xss

@@ -1,5 +1,5 @@
 <template>
-  <div v-resize:[direction].quite="reSizeCallBack">
+  <div v-resize:[direction]="reSizeCallBack">
     {{ height }}
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
   // },
   data () {
     return {
-      direction: '',
+      direction: 'vertical',
       height: 0
     }
   },

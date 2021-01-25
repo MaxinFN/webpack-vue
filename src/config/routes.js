@@ -41,5 +41,17 @@ export default [
     path: '/directives',
     name: 'directive',
     component: () => import('../views/demo/demo-directive.vue')
-  }
+  },
+  // slot的 demo 练习
+  {
+    path: '/slot-demo',
+    name: 'slot-demo',
+    component: () => import('../views/demo/demo-slot.vue')
+  },
+  // $attrs 和 $listensers 组件封装
+  {
+    path: '/attr-demo',
+    name: 'attr-demo',
+    component: () => import('../views/demo/demo-attr.vue')
+  },
 ]
