@@ -1,5 +1,5 @@
 <template>
-  <div v-resize:[direction]="reSizeCallBack">
+  <div v-resize:[direction].quite="reSizeCallBack">
     {{ height }}
   </div>
 </template>

@@ -10,3 +10,27 @@
 https://juejin.cn/post/6921223155621036039#heading-18
 - 官方文档：
 https://github.com/leoforfree/cz-customizable#steps
+
+## 代码依赖库
+- 日志库: npm install sn-console --save
+```text
+import log from 'sn-console''
+window.log = log // 挂载window上，全局使用
+
+let arr = [
+            {
+                name: 'SNine',
+                age: 22
+            },
+            {
+                name: '张三',
+                age: 28
+            }
+          ]
+  log.info(arr)
+  log.success(arr)
+  log.primary(arr)
+  log.warning(arr)
+  log.danger(arr)
+
+```

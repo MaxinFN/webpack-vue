@@ -14,12 +14,12 @@ const config = {
   },
   module: {
     rules: [
-      {
-        test: /\.(vue|js|jsx)$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/,
-        enforce: 'pre' // 预处理
-      },
+      // {
+      //   test: /\.(vue|js|jsx)$/,
+      //   loader: 'eslint-loader',
+      //   exclude: /node_modules/,
+      //   enforce: 'pre' // 预处理
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -56,10 +56,12 @@ const config = {
       }
     ]
   },
-  // import Vue from 'vue' 解析的路径位置
   resolve: {
+    // 在导入语句没带文件后缀时，Webpack 会自动带上后缀后去尝试访问文件是否存在
+    extensions: ['.js', '.vue', '.css', '.scss', '.less'],
+    // 只命中以vue结尾的导入语句
     alias: {
-      vue: path.join(__dirname, '../node_modules/vue/dist/vue.min.js')
+      vue$: path.join(__dirname, '../node_modules/vue/dist/vue.min.js')
     }
   }
 }

@@ -54,4 +54,9 @@ export default [
     name: 'attr-demo',
     component: () => import('../views/demo/demo-attr.vue')
   },
+  {
+    path: '/canvas',
+    name: 'canvas-demo',
+    component: () => import('../views/demo/canvas.vue')
+  }
 ]

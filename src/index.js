@@ -12,8 +12,10 @@ import './assets/styles/test.css'
 // 自定义指令
 import directive from './directive'
 import Global from './global'
+import components from './components'
 Vue.use(Global)
 Vue.use(ElementUI)
+Vue.use(components)
 Object.defineProperty(Vue.prototype, '$xss', {
   value: xss
 })

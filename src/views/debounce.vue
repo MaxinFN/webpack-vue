@@ -1,6 +1,7 @@
 <template>
   <div>
     <div
+      v-drag
       class="box"
       @mousemove="handleMove"
     >
