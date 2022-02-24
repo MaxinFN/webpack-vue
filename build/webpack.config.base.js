@@ -61,7 +61,8 @@ const config = {
     extensions: ['.js', '.vue', '.css', '.scss', '.less'],
     // 只命中以vue结尾的导入语句
     alias: {
-      vue$: path.join(__dirname, '../node_modules/vue/dist/vue.min.js')
+      '@': path.resolve(__dirname, '../src'),
+      vue$: path.resolve(__dirname, '../node_modules/vue/dist/vue.min.js')
     }
   }
 }

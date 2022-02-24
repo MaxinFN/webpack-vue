@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-08-18 19:51:44
+ * @LastEditTime: 2021-07-27 11:56:41
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \m\Readme.md
+-->
 ## npm install
 - npm install --save-dev / npm install -D (打包构建项目所需要的的依赖包)
  - xxx-cli , less-loader, babel-loader
@@ -34,3 +42,18 @@ let arr = [
   log.danger(arr)
 
 ```
+
+## async/await 踩坑
+- 项目中使用async/await 编译后爆出错误
+```text
+regeneratorRuntime is not defined
+```
+- 解决方法：
+  - babel 6.x.x版本，npm i babel-plugin-transform-runtime -D
+  - babel 7.x.x版本，npm i @babel/plugin-transform-runtime -D
+  - 在babelrc
+  ```js
+  "plugins": [
+    ["@babel/plugin-transform-runtime"]
+  ]
+  ```
